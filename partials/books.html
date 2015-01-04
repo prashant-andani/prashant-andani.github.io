@@ -1,27 +1,17 @@
 <h2>Search results</h2>
 <hr>
-<div class="container" ng-repeat="book in books.items">
-  <div class="well">
-      <div class="media">
-      	<a class="pull-left" href="#">
-    		<img class="media-object" ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}">
-  		</a>
-  		<div class="media-body">
-    		<h4 class="media-heading">{{book.volumeInfo.title}}</h4>
-    		<p><strong>Author:</strong></i> <span ng-repeat="author in book.volumeInfo.authors ">{{author}}&nbsp;,</span></p>
-          <p class="text-right"><i class="fa fa-book"></i> {{book.volumeInfo.publisher}}	</p>
-          <p>{{book.volumeInfo.description}}</p>
-          <ul class="list-inline list-unstyled">
-  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
-            <li>|</li>
-            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
-            <li>|</li>
-            <li>
-               <strong>Rating:</strong> {{book.volumeInfo.averageRating}}
-            </li>
-           </ul>
-       </div>
-    </div>
-  </div>
+<div class="container row">
+	<div class="col-md-3" ng-repeat="book in books.items">
+  		<div class="media">
+      		<a class="pull-left" href="">
+    			<img class="media-object" ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}">
+  			</a>
+  			<div class="media-body">
+    			<h4 class="media-heading">{{book.volumeInfo.title}}</h4>
+    			<p><strong>Author:</strong></i> <span ng-repeat="author in book.volumeInfo.authors ">{{author}}&nbsp;,</span></p>
+          
+       		</div>
+    	</div>
+  	</div>
    
 </div>
