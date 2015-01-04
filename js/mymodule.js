@@ -1,20 +1,45 @@
-var app = angular.module('movie-directives', []);
-var api_key = '3qLk48aX.TEgtqNBR0Zv2R4UoroKxRNs';
+var app = angular.module('books', []);
 
-app.directive('movieView', ['$http', function($http){
+app.directive('searchView', ['$http', function($http, $scope){
+        
     return {
       restrict: 'E',
-      templateUrl : 'partials/movie.html',
+      templateUrl : 'partials/books.html',
       controller: function($scope){
-        $http.jsonp('http://in.bookmyshow.com/getHTML.bms?cmd=TREND&rgn=GULB&callback=jsonp_callback').success(
-          function(data){
-              $scope.data = data;
-              
-          });
-      }
+        $scope.getBooks = function(){
+           $http.get('https://www.googleapis.com/books/v1/volumes?q='+$scope.keyword).success(
+            function(data){
+              //$scope.books = data;
+                if(data){
+                  $scope.books = data;
+                  $scope.is_data = true;                  
+                }else{
+                  $scope.is_data = false;
+                  $scope.books = '';
+                }
+            });
+        }
+        $scope.is_data = '';
+        $scope.keyword = 'java';
+        $scope.books = '';
+        if(keyword){
+          $http.get('https://www.googleapis.com/books/v1/volumes?q='+$scope.keyword).success(
+            function(data){
+              //$scope.books = data;
+                if(data){
+                  $scope.books = data;
+                  $scope.is_data = true;                  
+                }else{
+                  $scope.is_data = false;
+                  $scope.books = '';
+                }
+            });
+        }
+      },
+      
     }
   }]);
 
-function jsonp_callback(data) {
+function callback(data) {
   console.log(data);
 }
