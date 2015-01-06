@@ -1,9 +1,10 @@
 <h2>Search results</h2>
 <hr>
+<input ng-model="search" class="form-control" placeholder="filter by keyword">
 <div class="container row">
-	<div class="col-md-3" ng-repeat="book in books.items">
+	<div class="col-md-3" ng-repeat="book in books.items | filter:search">
   		<div class="media">
-      		<a class="pull-left" href="">
+      		<a class="pull-left" ng-href="#/book/?volume={{book.id}}">
     			<img class="media-object" ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}">
   			</a>
   			<div class="media-body">
