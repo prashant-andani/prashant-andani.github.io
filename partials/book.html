@@ -1,12 +1,26 @@
 <div class="container row">
-	<div class="col-md-12" >
+	<div class="col-md-4">
+        <a class="pull-left" href="">
+                <img class="media-object" ng-src="{{book.volumeInfo.imageLinks.small}}">
+        </a>
+        <div >
+            <ul ng-repeat="price_data in book_price_list | orderBy:price:!reverse">
+                <li>
+                    <a ng-href="{{price_data.url}}"><img ng-src="{{price_data.thumbnail}}">
+                    </a>
+                    <br/>
+                    <strong>{{price_data.source}} : <i class="fa fa-rupee"></i> {{price_data.price}}
+                    </strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-8" >
   		<div class="media">
-      		<a class="pull-left" href="">
-    			<img class="media-object" ng-src="{{book.volumeInfo.imageLinks.small}}">
-  			</a>
+      		
   			<div class="media-body">
     			<h3 class="media-heading"><i class="fa fa-book"></i> {{book.volumeInfo.title}}</h3>
-    			<p><strong>Author:</strong></i> <span ng-repeat="author in book.volumeInfo.authors ">{{author}}&nbsp;,</span></p>
+    			<p><strong>Author:</strong><span ng-repeat="author in book.volumeInfo.authors ">{{author}}&nbsp;,</span></p>
     			<p>{{book.volumeInfo.description}}</p>
     			<table class="table table-striped" >
     				<tbody>
@@ -29,6 +43,10 @@
     						<td><strong>Categories</strong></td>
     						<td>{{book.volumeInfo.categories}}</td>
     					</tr>
+                        <tr>
+                            <td><strong>ISBN</strong></td>
+                            <td>{{book.industryIdentifiers[0].identifier}}</td>
+                        </tr>
     				</tbody>
     			</table>
           

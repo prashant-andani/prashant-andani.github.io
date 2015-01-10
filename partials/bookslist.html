@@ -1,15 +1,24 @@
-<h2>Search results</h2>
+<h2>Suggested Books</h2>
 <hr>
+<div ng-if="status">
+  {{user_books}}
+</div>
+
 <input ng-model="search" class="form-control" placeholder="filter by keyword">
 <div class="container row">
 	<div class="col-md-3" ng-repeat="book in books.items | filter:search">
   		<div class="media">
-      		<a class="pull-left" ng-href="#/book/?volume={{book.id}}">
+      		<a class="pull-left" ng-href="#/book/?volume={{book.id}}&isbn={{book.volumeInfo.industryIdentifiers[0].identifier}}">
     			<img class="media-object" ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}">
   			</a>
   			<div class="media-body">
     			<h4 class="media-heading">{{book.volumeInfo.title}}</h4>
-    			<p><strong>Author:</strong></i> <span ng-repeat="author in book.volumeInfo.authors ">{{author}}&nbsp;,</span></p>
+    			<strong>ISBN:</strong>{{book.volumeInfo.industryIdentifiers[0].identifier}}
+          <p><strong>Author:</strong>
+
+          <span ng-repeat="author in book.volumeInfo.authors ">{{author}}&nbsp;,</span>
+
+                        </p>
           
        		</div>
     	</div>
