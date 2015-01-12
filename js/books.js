@@ -1,5 +1,6 @@
 var app = angular.module('books', []);
 var priceServiceApiKey = '659b4b387abab6206c7955370cc01ef85b75a875';
+var books_list = {};
 app.factory('bookService',['$rootScope','$facebook',function($rootScope, $facebook){
   var bookService = {};
   bookService.user_books = [];
@@ -11,6 +12,9 @@ app.factory('bookService',['$rootScope','$facebook',function($rootScope, $facebo
     $facebook.cachedApi('/me/books.wants_to_read').then(function(books) {
       $rootScope.$broadcast('wants_to_read_books', books);
 
+    });
+    $facebook.cachedApi('/me').then(function(user_data) {
+      $rootScope.$broadcast('user_data', user_data);
     });
     //get books that user liked
     $facebook.cachedApi('/me/books').then(function(books) {
@@ -102,7 +106,7 @@ app.directive('searchView', ['$http','$rootScope','bookService', function($http,
       controller: function($scope, bookService){
         $scope.is_data = '';
         $scope.keyword = '';
-        $scope.books = '';
+        $scope.books = [];
         $scope.fb_books = [];
         $scope.base_url = window.location.host;
 
@@ -113,13 +117,17 @@ app.directive('searchView', ['$http','$rootScope','bookService', function($http,
               user_keyword = keyword;
             }
             else{
+              $scope.books = [];
               user_keyword = $scope.keyword;
             }
            $http.get('https://www.googleapis.com/books/v1/volumes?q='+user_keyword).success(
             function(data){ 
               //$scope.books = data;
                 if(data){
-                  $scope.books = data;
+                  $.each(data.items, function(index, value){
+                    $scope.books.push(value);
+                    console.log($scope.books);
+                  });
                   $scope.is_data = true;                 
                 }else{
                   $scope.is_data = false;
@@ -131,6 +139,12 @@ app.directive('searchView', ['$http','$rootScope','bookService', function($http,
           $.each(books.data, function(index, book){            
             $scope.fb_books.push(book.data.book.title);
             $scope.getBooks(book.data.book.title);
+          })
+        });
+        $scope.$on('user_data',function(event, user_data){
+          $.each(user_data.inspirational_people, function(index, people){            
+            $scope.fb_books.push(people.name);
+            $scope.getBooks(people.name);
           })
         });
 

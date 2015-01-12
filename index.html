@@ -2,15 +2,18 @@
 
 <html >
 <head>
-    <title>Google Books Search</title>
+    <title>ShowMeBooks</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://www.justinaguilar.com/animations/css/animations.css" rel="stylesheet">
+    <style>
+      .book{
+        visibility: hidden;
+      }
+    </style>
 </head>
 <body ng-app="googleBooks">
-    
-  
-<nav class="navbar navbar-default">
+    <nav class="navbar navbar-default">
       <div class="container-fluid" >
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -20,20 +23,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">ShowMyBooks</a>
+          <a class="navbar-brand" href="#"><i class="fa fa-book"></i> ShowMeBooks</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#"><span><i class="fa fa-book"></i> Books</span></a></li>
-            
-          </ul>
-          
+         
           <ul class="nav navbar-nav navbar-right">
             <li ng-controller="mainCtrl">                
                 <button ng-click="loginToggle()" class="btn btn-primary" id="login-btn">
-                    <span ng-if="status">Hey!! {{user.first_name}} {{user.last_name}}</span>
+                    <span ng-if="status">Hey!! {{user.first_name}}</span>
                     <span ng-if="!status"><i class="fa fa-facebook"></i> Connect with Facebook</span>
                 </button>
             </li>
@@ -54,6 +53,9 @@
 <script src="js/main.js"></script>
 <script src="js/books.js"></script>
 <script src="js/lib/ngFacebook.js"></script>
+<script type="text/javascript">
+  
+</script>
 </body>
 
 </html>

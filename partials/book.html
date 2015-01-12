@@ -4,7 +4,7 @@
                 <img class="media-object" ng-src="{{book.volumeInfo.imageLinks.small}}">
         </a>
         <div >
-            <ul ng-repeat="price_data in book_price_list | orderBy:price:!reverse">
+            <ul ng-repeat="price_data in book_price_list | orderBy:price_data.price">
                 <li>
                     <a ng-href="{{price_data.url}}"><img ng-src="{{price_data.thumbnail}}">
                     </a>
