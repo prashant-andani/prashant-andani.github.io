@@ -1,0 +1,27 @@
+<h2>Suggested Books</h2><input class="col-md-2 pull-right" ng-model="search" class="form-control" placeholder="filter by keyword">
+<hr>
+<div ng-if="status">
+  {{user_books}}
+</div>
+
+<div class="container ">
+  	
+  <div  class="col-md-2 fadeIn book" ng-repeat="book in books | filter:search" ng-model="books">
+  		<div class="thumbnail">
+      <a ng-href="#/book/?volume={{book.id}}&isbn={{book.volumeInfo.industryIdentifiers[0].identifier}}"><img ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt=""></a>
+        <div class="caption">
+          <a ng-href="#/book/?volume={{book.id}}&isbn={{book.volumeInfo.industryIdentifiers[0].identifier}}">
+            <h4 class="text-primary">{{book.volumeInfo.title}}</h4>
+          </a>
+          <span ng-if="book.volumeInfo.averageRating">
+            <strong>Rating:</strong>
+            <span class="label label-primary">{{book.volumeInfo.averageRating}} / 5</span>
+          </span>
+          
+               
+        </div>
+      </div>
+      
+  	</div>
+   
+</div>

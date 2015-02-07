@@ -1,0 +1,88 @@
+// Navbar styles
+.navbar {
+	font-size: 16px;
+}
+
+.navbar-brand {
+	font-size: 18px;
+	padding-left: 0;
+}
+
+.brand-highlight {
+	color: @green;
+}
+
+// navbar search form
+.navbar-form {
+	margin-top: 10px;
+}
+
+.search-input {
+	height: 30px;
+	padding: 6px;
+	font-size: 16px;
+}
+
+.btn-search {
+	padding: 4px 15px;
+}
+
+@media (min-width: 1024px) {
+	.navbar-header {
+		padding-right: 25px;
+	}
+
+	.btn-search {
+		padding: 4px 20px;
+	}
+}
+
+.icon-search {
+	color: @jumbo;
+}
+
+.text-light {
+	font-weight: 300;
+}
+
+#navbar-search {
+	.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+		color: @text-color;
+		text-decoration: none;
+		outline: 0;
+		background: @gray-lighter;
+	}
+}
+
+.navbar-default .navbar-nav > li > a.dropdown-toggle:hover,
+.navbar-default .navbar-nav > li > a.dropdown-toggle:focus {
+  color: #333333;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a.dropdown-toggle,
+.navbar-default .navbar-nav > .active > a.dropdown-toggle:hover,
+.navbar-default .navbar-nav > .active > a.dropdown-toggle:focus {
+  color: #555555;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .open > a.dropdown-toggle,
+.navbar-default .navbar-nav > .open > a.dropdown-toggle:hover,
+.navbar-default .navbar-nav > .open > a.dropdown-toggle:focus {
+  background-color: transparent;
+  color: #555555;
+}
+
+// change look of dropdown menu in navbar
+@media (min-width: @screen-sm) {
+	.dropdown-menu.large > li > a {
+		padding: 7px 20px;
+		font-size: 16px;
+	}
+}
+
+// loading bar
+#loading-bar .bar {
+  background: @green;
+}

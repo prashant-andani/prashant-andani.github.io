@@ -1,0 +1,57 @@
+<div class="row" ng-show="movies.intheaters.length > 0">
+	<h2 class="fp-header">In Theaters <a ui-sref="in-theaters" class="btn btn-outline btn-primary fp-btn">See all</a></h2>
+</div>
+<div class="row fp-listing">
+		<div class="movie-card" ng-repeat="movie in movies.intheaters">
+			<div class="poster">
+				<a ui-sref="movie-page({id: movie.id, name: movie.title})"><img src="{{ movie.posters.detailed }}">
+			</div>
+			<div class="info">
+				<p class="title">{{ movie.title }}</a></p>
+				<p class="ratings"><a href="{{ movie.rtlink }}" target="_blank" title="Critics rating" ng-if="movie.ratings.critics_score > 0"><i class="fa fa-certificate red"></i> {{ movie.ratings.critics_score }}%</a> <a href="{{ movie.rtlink }}" target="_blank" title="Audience rating" ng-if="movie.ratings.audience_score > 0"><i class="fa fa-star yellow"></i> {{ movie.ratings.audience_score }}%</a></p>	
+				<p class="starring" ng-if="movie.abridged_cast.length > 0">{{ movie.abridged_cast[0].name | noParens }}, {{ movie.abridged_cast[1].name | noParens }}</p>	
+				<p class="details">{{ movie.mpaa_rating }}, {{ movie.runtime }} min.</p>	
+				<div class="bottom-actions">
+					<a href youtube-trailer>Play Trailer</a><a ui-sref="movie-page({id: movie.id, name: movie.title})" class="dark-link">More info</a> 
+				</div>	
+			</div>
+		</div>		
+</div>
+<div class="row" ng-show="movies.opening.length > 0">
+	<h2 class="fp-header">Opening <a ui-sref="opening" class="btn btn-outline btn-primary fp-btn">See all</a></h2>
+</div>
+<div class="row fp-listing">
+		<div class="movie-card" ng-repeat="movie in movies.opening">
+			<div class="poster">
+				<a ui-sref="movie-page({id: movie.id, name: movie.title})"><img src="{{ movie.posters.detailed }}">
+			</div>
+			<div class="info">
+				<p class="title">{{ movie.title }}</a></p>
+				<p class="ratings"><a href="{{ movie.rtlink }}" target="_blank" title="Critics rating" ng-if="movie.ratings.critics_score > 0"><i class="fa fa-certificate red"></i> {{ movie.ratings.critics_score }}%</a> <a href="{{ movie.rtlink }}" target="_blank" title="Audience rating" ng-if="movie.ratings.audience_score > 0"><i class="fa fa-star yellow"></i> {{ movie.ratings.audience_score }}%</a></p>	
+				<p class="starring" ng-if="movie.abridged_cast.length > 0">{{ movie.abridged_cast[0].name | noParens }}, {{ movie.abridged_cast[1].name | noParens }}</p>
+				<p class="details">{{ convertDate(movie.release_dates.theater) }}</p>		
+				<div class="bottom-actions">
+					<a href youtube-trailer>Play Trailer</a><a ui-sref="movie-page({id: movie.id, name: movie.title})" class="dark-link">More info</a> 
+				</div>	
+			</div>
+		</div>		
+</div>
+<div class="row" ng-show="movies.upcoming.length > 0">
+	<h2 class="fp-header">Upcoming <a ui-sref="upcoming" class="btn btn-outline btn-primary fp-btn">See all</a></h2>
+</div>
+<div class="row fp-listing">
+		<div class="movie-card" ng-repeat="movie in movies.upcoming">
+			<div class="poster">
+				<a ui-sref="movie-page({id: movie.id, name: movie.title})"><img src="{{ movie.posters.detailed }}">
+			</div>
+			<div class="info">
+				<p class="title">{{ movie.title }}</a></p>
+				<p class="ratings"><a href="{{ movie.rtlink }}" target="_blank" title="Critics rating" ng-if="movie.ratings.critics_score > 0"><i class="fa fa-certificate red"></i> {{ movie.ratings.critics_score }}%</a> <a href="{{ movie.rtlink }}" target="_blank" title="Audience rating" ng-if="movie.ratings.audience_score > 0"><i class="fa fa-star yellow"></i> {{ movie.ratings.audience_score }}%</a></p>	
+				<p class="starring" ng-if="movie.abridged_cast.length > 0">{{ movie.abridged_cast[0].name | noParens }}, {{ movie.abridged_cast[1].name | noParens }}</p>
+				<p class="details">{{ convertDate(movie.release_dates.theater) }}</p>		
+				<div class="bottom-actions">
+					<a href youtube-trailer>Play Trailer</a><a ui-sref="movie-page({id: movie.id, name: movie.title})" class="dark-link">More info</a> 
+				</div>	
+			</div>
+		</div>		
+</div>

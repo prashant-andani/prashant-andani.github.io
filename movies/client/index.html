@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+  <meta charset="UTF-8">
+  <title>MovieZen</title>
+  <!-- Vendor styles -->
+  <link rel="stylesheet" href="vendor/angular-loading-bar/src/loading-bar.css">
+  <link rel="stylesheet" href="vendor/icomoon/dist/css/style.css">
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="vendor/ngDialog/css/ngDialog.css">
+  <link rel="stylesheet" href="vendor/ngDialog/css/ngDialog-theme-default.css">
+  <link rel="stylesheet" href="vendor/ngDialog/css/ngDialog-theme-plain.css">
+
+  <link rel="stylesheet" href="dist/style.min.css">
+  <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+	<header ng-include="'app/layout/navbar.html'"></header>
+	<div class="container" id="content">
+		<http://angular-ui.github.io/bootstrap/#/popoverdiv ui-view></div>
+	</div>
+	<footer ng-include="'app/layout/footer.html'"></footer>
+	
+	<!-- Vendor scripts -->
+	<script src="vendor/angular/angular.min.js"></script>
+	<script src="vendor/angular-resource/angular-resource.min.js"></script>
+	<script src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script src="vendor/angular-loading-bar/src/loading-bar.js"></script>
+	<script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="vendor/ngDialog/js/ngDialog.min.js"></script>
+	
+	<script src="dist/app.js"></script>
+</body>
+</html>
