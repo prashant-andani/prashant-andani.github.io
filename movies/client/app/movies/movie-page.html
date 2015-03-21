@@ -1,6 +1,6 @@
 <div class="movie-page">
 	<div class="col-md-offset-1 col-md-9">
-		<h1 class="movie-header"><i class="fa fa-video-camera"></i> {{ movie.title }}</h1>
+		<h1 class="movie-header"><i class="fa fa-film"></i> {{ movie.title }}</h1>
 		<div class="movie">
 			<div class="poster" ng-if="movie.posters.original">
 				<img src="{{ movie.posters.original }}" alt="">	
@@ -33,7 +33,7 @@
 			</div>	
 
 		</div>
-	    <h2 class="movie-header">Similar Movies</h2>
+	    <h2 class="movie-header" ng-if="similar_movies">Similar Movies</h2>
 	    <div class="search-results" ng-if="similar_movies">
 			<div class="movie" ng-repeat="movie in similar_movies">
 					<a ui-sref="movie-page({ id: movie.imdb_code, name: movie.title })">
@@ -55,4 +55,7 @@
 	</div>
 	</div>
 	
+</div>
+<div>
+	{{movie.trailer}}
 </div>

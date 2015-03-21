@@ -237,12 +237,12 @@ function MovieCtrl($rootScope, $scope, $state, $http, MovieService) {
 	$scope.movie = MovieService.getMovie($scope.id);
 	
 	if($scope.movie_title){
-		$http.get("https://yts.re/api/v2/list_movies.json?query_term="+$scope.movie_title)
+		$http.get("https://yts.to/api/v2/list_movies.json?query_term="+$scope.movie_title)
 	    	.success(function(response) {console.log(response);
 	    	if(response.data.movie_count > 0){
 				$scope.torrents = response.data.movies[0].torrents;
 				$scope.movie_id = response.data.movies[0].id;
-				$http.get("https://yts.re/api/v2/movie_suggestions.json?movie_id="+$scope.movie_id)
+				$http.get("https://yts.to/api/v2/movie_suggestions.json?movie_id="+$scope.movie_id)
 	    		.success(function(response) {
 	    			$scope.similar_movies = response.data.movie_suggestions;
 	    			console.log($scope.similar_movies);

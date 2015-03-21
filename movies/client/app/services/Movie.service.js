@@ -108,6 +108,7 @@ function MovieService($rootScope, $q, RTService, TmdbService, YoutubeService) {
 
 	// Return movie by id, add in youtube trailer
 	function loadMovie(moviePromise) {
+		console.log("here");
 		var movie = {};
 
 		moviePromise.then(function(rt_res) {
@@ -142,7 +143,7 @@ function MovieService($rootScope, $q, RTService, TmdbService, YoutubeService) {
 						//get youtube trailer and pass on rt info
 						var youtubePromise = YoutubeService.search(rt_res.title);
 						angular.copy(movieOutput(rt_res), movie);
-
+						console.log(youtubePromise);
 						// get youtube trailer from yt api
 						youtubePromise.then(function(yt_res) {
 							movie.trailer = yt_res;
