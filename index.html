@@ -1,127 +1,202 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='app'>
+<html class="no-js">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Prashant Andani Portfolio</title>
-    <!-- Vendor styles -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css
-">
-        <link rel="shortcut icon" href="favicon.ico">
-        <style type="text/css">
-            .box {
-                border-radius: 3px;
-                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-                padding: 10px 25px;
-                text-align: right;
-                display: block;
-                margin-top: 60px;
-            }
-            
-            .box-icon {
-                background-color: #57a544;
-                border-radius: 50%;
-                display: table;
-                height: 100px;
-                margin: 0 auto;
-                width: 100px;
-                margin-top: -61px;
-            }
-            
-            .box-icon span {
-                color: #fff;
-                display: table-cell;
-                text-align: center;
-                vertical-align: middle;
-            }
-            
-            .info h4 {
-                font-size: 26px;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-            }
-            
-            .info > p {
-                color: #717171;
-                font-size: 16px;
-                padding-top: 10px;
-                text-align: justify;
-            }
-            
-            .info > a {
-                background-color: #03a9f4;
-                border-radius: 2px;
-                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-                color: #fff;
-                transition: all 0.5s ease 0s;
-            }
-            
-            .info > a:hover {
-                background-color: #0288d1;
-                box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.12);
-                color: #fff;
-                transition: all 0.5s ease 0s;
-            }
-        </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Profile - Prashant Andani</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <!-- Bootstrap and Font Awesome css-->
+  <!-- we use cdn but you can also include local files located in css directory-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="">
+  <!-- Tweaks for older IEs-->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 
 <body>
-    <nav class="navbar navbar-default" role="navigation" ng-controller="NavbarCtrl">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-        <a class="navbar-brand" href>Prashant Andani - Portfolio</a>
-        <ul class="nav navbar-nav">
-            <li class="pull-right"><a href="https://github.com/prashant-andani"><i class="fa fa-github"></i> GitHub</a></li>
-        </ul>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-6">I'm Prashant Andani</h1>
+      <p class="lead">Enthusiast Frontend Engineer, Entrepreneur, and Tech Geek from Bengaluru, India</p>
+      <hr class="my-4">
+      <a href="https://github.com/prashant-andani">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/prashant-andani-0705b921/">
+        <i class="fa fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://twitter.com/prashant_andani">
+        <i class="fa fa-twitter fa-2x"></i>
+      </a>
 
-        </div>
-    </nav>
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="box">   
-                    <div class="info">
-                        <h4 class="text-center">Movifi</h4>
-                        <p>Explore, Organize and Share movies with friends. Built with Angular</p>
-                        <p> <img style="height:200px;width:500px" src="assets/movifi.png" /></p>
-                        <a href="https://movi.firebaseapp.com" class="btn">Launch App</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="box">
-                    <div class="info">
-                        <h4 class="text-center">Colorful T-Rex Runner</h4>
-                        <p>A PWA, Colorful T-Rex Runner based out of chrome browser</p>
-                        <p> <img style="height:200px;width:500px" src="assets/trex_runner.png" /></p>
-                        <a href="https://github.com/prashant-andani/t-rex-runner" class="btn"><i class="fa fa-github"></i> GitHub</a>
-                        <a href="https://todo-32255.firebaseapp.com" class="btn">Launch App</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="box">
-                    <div class="info">
-                        <h4 class="text-center">Expore Books</h4>
-                        <p>Search Books, compare prices across Ecommerce websites</p>
-                        <a href="books/index.html" class="btn">Launch App</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card ">
+          <div class="card-body">
+            <h4 class="card-title">
+              <i class="fa fa-heart"></i> Fav Quotes</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <blockquote class="blockquote mb-0">
+                <p>"Think Different!"</p>
+                <footer class="blockquote-footer">
+                  <cite title="Source Title">Steve Jobs</cite>
+                </footer>
+              </blockquote>
+            </li>
+            <li class="list-group-item">
+              <blockquote class="blockquote mb-0">
+                <p>“Innovation distinguishes between a Leader and Follower"</p>
+                <footer class="blockquote-footer">
+                  <cite title="Source Title">Steve Jobs</cite>
+                </footer>
+              </blockquote>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">
+              <i class="fa fa-heart"></i> Fav Dev Environment</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="fa fa-laptop"></i> MacBook Pro</li>
+            <li class="list-group-item">
+              <i class="fa fa-star"></i> VS Code</li>
+            <li class="list-group-item">
+              <i class="fa fa-headphones"></i> Headphone</li>
+            <li class="list-group-item">
+              <i class="fa fa-headphones"></i> Brain.fm</li>
+            <li class="list-group-item">
+              <i class="fa fa-coffee"></i> Lots of Tea</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">
+              <i class="fa fa-graduation-cap"></i> Graduation</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>College:</strong> PES Institute of Technology
+            </li>
+            <li class="list-group-item">
+              <strong>Degree</strong> Bachelor of Engineering
+            </li>
+            <li class="list-group-item">
+              <strong>Branch:</strong> Information Science
+            </li>
+            <li class="list-group-item">
+              <strong>Year of Graduation:</strong> 2011
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second line -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card ">
+          <div class="card-body">
+            <h4 class="card-title">
+              <i class="fa fa-magic"></i> Skills</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              Javascript, Angular, React, Vuejs
+            </li>
+            <li class="list-group-item">
+              Web AR/VR Apps, PWA
+            </li>
+            <li class="list-group-item">
+              GIT, Webpack, Grunt
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card ">
+          <div class="card-body">
+            <h4 class="card-title">
+              <i class="fa fa-trophy"></i> Honors / Awards</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              Little Star of the Year, Innominds - 2016
+            </li>
+            <li class="list-group-item">
+              Hackathon @ Careervita- 2015
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card ">
+          <div class="card-body">
+            <h4 class="card-title">
+              <i class="fa fa-thumbs-up"></i> Recommendations</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong><a href="https://www.linkedin.com/in/gurukini/">Guru Kini</a></strong> - "The first thing that one notices about Prashant is his constant drive for self-improvement.
+              He is highly self-motivated and always looks for new ways of applying his skills to solve complex problems.
+              Prashant is passionate about building great applications and is always exploring new ideas and domains at any
+              given point."
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Third Line -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-body">
+            <h4 class="card-title">
+              Personal Projects</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="https://github.com/prashant-andani/AR-Alphabets-words">AR Alphabets</a> - Web Augment Reality app for learning Alphabet words for children
+            </li>
+            <li class="list-group-item">
+              <a href="https://github.com/prashant-andani/webvr-movies">Web VR Movies Info</a> - Web VR Movie Information using React, A-frame 
+
+            </li>
+
+            <li class="list-group-item">
+                <a href="https://github.com/prashant-andani/webvr-movies">Developer Profile</a>- This app lets a programmer create a profile of all online presence in to a single page. i.e a Github, Stackoverflow, LindkedIn Etc.
+            </li>
+            <li class="list-group-item">
+                <a href="https://github.com/prashant-andani?tab=repositories">More Projects..</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
 </body>
 
 </html>
