@@ -17,6 +17,7 @@
           // Examine the text in the response
           response.json().then(function (repos) {
             createReportCard(repos);
+            listRepos(repos);
           });
         }
       )
@@ -26,7 +27,7 @@
   }
 
   function createReportCard(repos) {
-    var report = {
+    let report = {
       star: 0,
       watch: 0,
       fork: 0
@@ -41,8 +42,8 @@
     })
 
     //diplay
-    var reportEl = document.getElementById('report_card');
-    var template = `
+    let reportEl = document.getElementById('report_card');
+    let template = `
     <div>
         <div class="card text-white bg-dark mb-3">
           <div class="card-header">
@@ -57,6 +58,22 @@
         </div>
     </div>`;
     reportEl.innerHTML = template;
+  }
+
+  function listRepos(repos) {
+    let repoListEl = document.getElementById('repo_list');
+    let template = `<li class="list-group-item">
+      <a href="https://github.com/prashant-andani/AR-Alphabets-words">AR Alphabets</a> - Web Augment Reality app for learning Alphabet words for Kids
+    </li>`;
+    repos.forEach(repo => {
+      if(repo.fork === false) {
+        let li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.innerHTML = `<a href="${repo.html_url}">${repo.name}</a> 
+        <p>${repo.description !==null ? repo.description : ''}</p>`;
+        repoListEl.appendChild(li); 
+      } 
+    });
   }
   fetchRepos();
 })();
