@@ -45,15 +45,26 @@
     let reportEl = document.getElementById('report_card');
     let template = `
     <div>
-        <div class="card text-white bg-dark mb-3">
-          <div class="card-header">
-          <h4 class="card-title">
-          <i class="fa fa-bar-chart"></i> Stats</h4>
-          </div>
+        <div class="card mb-3">
+    
           <div class="card-body">
-          <h5 class="card-title"><i class="fa fa-star"></i> ${report.star} Stars</h5>
-          <h5 class="card-title"> <i class="fa fa-eye"></i> ${report.watch} Watchers</h5>
-          <h5 class="card-title"><i class="fa fa-code-fork"></i> ${report.fork} Forks</h5>
+          <h4 class="card-title">
+          <i class="fa fa-bar-chart"></i> Github Stats</h4>
+          </h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <span style="font-size:1.5em; margin-right:60px">
+                <i class="fa fa-star text-warning"></i> ${report.star}
+              </span>
+              <span style="font-size:1.5em; margin-right:60px">
+                <i class="fa fa-eye text-primary"></i> ${report.watch}
+              </span>
+              <span style="font-size:1.5em; margin-right:60px">
+                <i class="fa fa-code-fork text-secondary"></i> ${report.fork}
+              </span>
+          </li>
+          </ul>
           </div>
         </div>
     </div>`;
